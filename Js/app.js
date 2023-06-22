@@ -1,4 +1,4 @@
-// cerate the nav menue based on page sections
+// create the nav menu based on page sections
 function createNavMenu() {
     const sectionsList = document.querySelectorAll('section');
     const menu = document.querySelector('.menu');
@@ -28,17 +28,17 @@ function isSectionInViewport(element) {
     );
 }
 
-/* add active-section class to the section in viewport and remove 
+/* add active-section class to the section in the viewport and remove 
    if it goes out
 */
 function addOrRemoveActiveClass(){
     const sectionsList = document.querySelectorAll('section');
     for (const section of sectionsList) {
-        section.classList.toggle('active-section', isSectionInViewport(section));
+        section.classList.toggle('active', isSectionInViewport(section));
     }
 }
 
-/* add active-link class to the nav element which is
+/* add active class to the nav element which is
    related to the viewed section
 */
 function checkActiveLink() {
@@ -48,9 +48,9 @@ function checkActiveLink() {
         if (isSectionInViewport(section)) {
             links.forEach(link => {
                 if(link.classList.contains(section.id)) {
-                    link.classList.add('active-link');
+                    link.classList.add('active');
                 } else {
-                    link.classList.remove('active-link');
+                    link.classList.remove('active');
                 }
             })
         }        
